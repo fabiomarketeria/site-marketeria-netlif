@@ -10,34 +10,45 @@
 }
 
 :root {
-  /* Marketeria Brand Colors with Material Design System */
-  --primary-50: #eff6ff;
-  --primary-100: #dbeafe;
-  --primary-200: #bfdbfe;
-  --primary-300: #93c5fd;
-  --primary-400: #60a5fa;
-  --primary-500: #3b82f6;
-  --primary-600: #2563eb;
-  --primary-700: #1d4ed8;
-  --primary-800: #1e40af;
-  --primary-900: #1e3a8a;
+  /* Marketeria Brand Colors - Updated Palette */
+  --marketeria-blue: #023F85;
+  --marketeria-teal: #62C3A4;
+  --marketeria-gold: #D3A518;
+  --marketeria-orange: #A8401D;
   
-  --secondary-50: #fffbeb;
-  --secondary-100: #fef3c7;
-  --secondary-200: #fde68a;
-  --secondary-300: #fcd34d;
-  --secondary-400: #fbbf24;
-  --secondary-500: #f59e0b;
-  --secondary-600: #d97706;
-  --secondary-700: #b45309;
-  --secondary-800: #92400e;
-  --secondary-900: #78350f;
+  /* Primary Scale - Based on Marketeria Blue */
+  --primary-50: #e6f2ff;
+  --primary-100: #b3d9ff;
+  --primary-200: #80bfff;
+  --primary-300: #4da6ff;
+  --primary-400: #1a8cff;
+  --primary-500: #0073e6;
+  --primary-600: #023F85;
+  --primary-700: #013366;
+  --primary-800: #012647;
+  --primary-900: #001a29;
+  
+  /* Secondary Scale - Based on Marketeria Teal */
+  --secondary-50: #e6faf7;
+  --secondary-100: #b3f0e8;
+  --secondary-200: #80e5d9;
+  --secondary-300: #62C3A4;
+  --secondary-400: #4db59c;
+  --secondary-500: #3aa689;
+  --secondary-600: #279876;
+  --secondary-700: #1e7a62;
+  --secondary-800: #155c4f;
+  --secondary-900: #0c3e3b;
 
-  /* Semantic Colors */
-  --primary-color: var(--primary-600);
-  --primary-dark: var(--primary-700);
-  --primary-light: var(--primary-500);
-  --secondary-color: var(--secondary-500);
+  /* Accent Colors */
+  --accent-gold: #D3A518;
+  --accent-orange: #A8401D;
+
+  /* Semantic Colors - Updated */
+  --primary-color: var(--marketeria-blue);
+  --primary-dark: var(--primary-800);
+  --primary-light: var(--primary-400);
+  --secondary-color: var(--marketeria-teal);
   --success-color: #10b981;
   --warning-color: #f59e0b;
   --danger-color: #ef4444;
@@ -68,6 +79,12 @@
   --bg-tertiary: var(--gray-100);
   --bg-surface: #ffffff;
   --bg-overlay: rgba(0, 0, 0, 0.6);
+  
+  /* Marketeria Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--marketeria-blue), var(--marketeria-teal));
+  --gradient-secondary: linear-gradient(135deg, var(--marketeria-teal), var(--marketeria-gold));
+  --gradient-accent: linear-gradient(135deg, var(--marketeria-gold), var(--marketeria-orange));
+  --gradient-hero: linear-gradient(135deg, var(--marketeria-blue) 0%, var(--marketeria-teal) 100%);
 
   /* Material Design Shadows */
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
@@ -479,22 +496,22 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--primary-700));
+  background: var(--gradient-primary);
   color: var(--text-inverse);
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, var(--primary-700), var(--primary-800));
+  background: linear-gradient(135deg, var(--primary-800), var(--secondary-700));
   color: var(--text-inverse);
 }
 
 .btn-secondary {
-  background: linear-gradient(135deg, var(--secondary-color), var(--secondary-600));
+  background: var(--gradient-secondary);
   color: var(--text-inverse);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(135deg, var(--secondary-600), var(--secondary-700));
+  background: var(--gradient-accent);
   color: var(--text-inverse);
 }
 
