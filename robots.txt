@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Main pages
+Allow: /index.html
+Allow: /grader.html
+Allow: /leads.html
+Allow: /engage.html
+Allow: /retain.html
+Allow: /integrate.html
+Allow: /thanks.html
+Allow: /privacy.html
+Allow: /terms.html
+
+# Static assets
+Allow: /styles.css
+Allow: /main.js
+
+# Disallow admin areas (if any in future)
+# Disallow: /admin/
+# Disallow: /_drafts/
+
+# Sitemap location
+Sitemap: https://marketeria.com.br/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1

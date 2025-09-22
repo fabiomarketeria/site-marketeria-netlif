@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growth Grader - Diagnóstico Gratuito da sua Máquina de Vendas | Marketeria</title>
+    <meta name="description" content="Descubra em 5 minutos as maiores oportunidades de crescimento da sua empresa com nosso diagnóstico gratuito. Análise completa de Marketing, Vendas, Atendimento e Operações.">
+    <meta name="keywords" content="diagnóstico empresarial, growth grader, análise vendas, auditoria marketing">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="index.html" class="logo">Marketeria</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#funis">Funis</a></li>
+                <li><a href="https://wa.me/5551981349757" class="btn btn-primary btn-sm">Falar com Especialista</a></li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="section">
+            <div class="container">
+                <div class="grader-container">
+                    <div class="text-center mb-5">
+                        <h1>Growth Grader - Diagnóstico Gratuito</h1>
+                        <p class="lead">Descubra em 5 minutos as maiores oportunidades de crescimento da sua empresa</p>
+                        <p class="text-gray">Análise completa com nota de 0 a 100% e recomendações personalizadas</p>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="grader-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 20%;"></div>
+                        </div>
+                        <div class="progress-text">Etapa 1 de 5</div>
+                    </div>
+
+                    <!-- Form -->
+                    <form id="grader-form">
+                        <!-- Step 1: Marketing -->
+                        <div class="grader-step active">
+                            <h3>📈 Marketing e Geração de Leads</h3>
+                            <p class="text-gray mb-4">Vamos analisar como sua empresa atrai e captura novos prospects</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Quantos canais de marketing sua empresa utiliza ativamente?</label>
+                                <select name="marketing_channels" class="form-control" required>
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="0">Nenhum canal estruturado</option>
+                                    <option value="1">1 canal (ex: apenas redes sociais)</option>
+                                    <option value="2">2-3 canais (ex: redes sociais + Google Ads)</option>
+                                    <option value="4">4-5 canais bem estruturados</option>
+                                    <option value="6">6+ canais integrados</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Sua empresa possui automação de marketing implementada?</label>
+                                <div>
+                                    <input type="radio" name="marketing_automation" value="nao" id="auto_no" required>
+                                    <label for="auto_no">Não, fazemos tudo manualmente</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="marketing_automation" value="basica" id="auto_basic">
+                                    <label for="auto_basic">Temos automação básica (ex: autoresponder)</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="marketing_automation" value="sim" id="auto_yes">
+                                    <label for="auto_yes">Sim, temos automação avançada com segmentação</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Como vocês qualificam os leads que chegam?</label>
+                                <div>
+                                    <input type="radio" name="lead_qualification" value="nao" id="qual_no" required>
+                                    <label for="qual_no">Não temos processo de qualificação</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="lead_qualification" value="manual" id="qual_manual">
+                                    <label for="qual_manual">Qualificação manual pela equipe</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="lead_qualification" value="sim" id="qual_yes">
+                                    <label for="qual_yes">Sistema automatizado de scoring de leads</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Sales -->
+                        <div class="grader-step">
+                            <h3>💼 Processo Comercial e Vendas</h3>
+                            <p class="text-gray mb-4">Agora vamos avaliar seu funil de vendas e processo comercial</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Sua empresa possui um processo de vendas documentado?</label>
+                                <div>
+                                    <input type="radio" name="sales_process" value="nao" id="process_no" required>
+                                    <label for="process_no">Não, cada vendedor faz do seu jeito</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="sales_process" value="basico" id="process_basic">
+                                    <label for="process_basic">Temos um processo básico definido</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="sales_process" value="sim" id="process_yes">
+                                    <label for="process_yes">Sim, totalmente documentado e seguido por todos</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Vocês utilizam CRM para gerenciar o funil de vendas?</label>
+                                <div>
+                                    <input type="radio" name="crm_usage" value="nao" id="crm_no" required>
+                                    <label for="crm_no">Não usamos CRM</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="crm_usage" value="basico" id="crm_basic">
+                                    <label for="crm_basic">Usamos planilhas ou ferramentas básicas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="crm_usage" value="sim" id="crm_yes">
+                                    <label for="crm_yes">Sim, CRM completo com automação</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Qual o nível de treinamento da equipe comercial?</label>
+                                <div>
+                                    <input type="radio" name="sales_training" value="nao" id="training_no" required>
+                                    <label for="training_no">Sem treinamento formal</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="sales_training" value="basico" id="training_basic">
+                                    <label for="training_basic">Treinamento básico esporádico</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="sales_training" value="sim" id="training_yes">
+                                    <label for="training_yes">Treinamento contínuo e metodologias estruturadas</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Customer Service -->
+                        <div class="grader-step">
+                            <h3>🛠️ Atendimento ao Cliente</h3>
+                            <p class="text-gray mb-4">Vamos avaliar como você cuida dos clientes após a venda</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Qual é o nível de satisfação dos seus clientes? (0-10)</label>
+                                <select name="customer_satisfaction" class="form-control" required>
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="0">0-2 (Muito insatisfeitos)</option>
+                                    <option value="1">3-4 (Insatisfeitos)</option>
+                                    <option value="2">5-6 (Neutros)</option>
+                                    <option value="3">7-8 (Satisfeitos)</option>
+                                    <option value="4">9-10 (Muito satisfeitos)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Vocês possuem automação no atendimento ao cliente?</label>
+                                <div>
+                                    <input type="radio" name="support_automation" value="nao" id="support_no" required>
+                                    <label for="support_no">Tudo manual via WhatsApp/email</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="support_automation" value="basico" id="support_basic">
+                                    <label for="support_basic">Temos chatbot básico</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="support_automation" value="sim" id="support_yes">
+                                    <label for="support_yes">Sistema completo com tickets e automação</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Como vocês coletam feedback dos clientes?</label>
+                                <div>
+                                    <input type="radio" name="feedback_system" value="nao" id="feedback_no" required>
+                                    <label for="feedback_no">Não temos sistema de feedback</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="feedback_system" value="basico" id="feedback_basic">
+                                    <label for="feedback_basic">Coleta informal esporádica</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="feedback_system" value="sim" id="feedback_yes">
+                                    <label for="feedback_yes">Sistema estruturado com NPS/CSAT</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Operations -->
+                        <div class="grader-step">
+                            <h3>⚙️ Operações e Integração</h3>
+                            <p class="text-gray mb-4">Por fim, vamos analisar como seus sistemas se comunicam entre si</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Seus sistemas (CRM, email, financeiro) estão integrados?</label>
+                                <div>
+                                    <input type="radio" name="data_integration" value="nao" id="integration_no" required>
+                                    <label for="integration_no">Cada sistema funciona isoladamente</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="data_integration" value="basico" id="integration_basic">
+                                    <label for="integration_basic">Algumas integrações básicas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="data_integration" value="sim" id="integration_yes">
+                                    <label for="integration_yes">Totalmente integrado com visão 360°</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Vocês possuem automação de processos internos?</label>
+                                <div>
+                                    <input type="radio" name="process_automation" value="nao" id="proc_auto_no" required>
+                                    <label for="proc_auto_no">Tudo feito manualmente</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="process_automation" value="basico" id="proc_auto_basic">
+                                    <label for="proc_auto_basic">Alguns processos automatizados</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="process_automation" value="sim" id="proc_auto_yes">
+                                    <label for="proc_auto_yes">Máxima automação possível</label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Vocês acompanham métricas e KPIs de performance?</label>
+                                <div>
+                                    <input type="radio" name="performance_tracking" value="nao" id="kpi_no" required>
+                                    <label for="kpi_no">Não acompanhamos métricas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="performance_tracking" value="basico" id="kpi_basic">
+                                    <label for="kpi_basic">Métricas básicas esporádicas</label>
+                                </div>
+                                <div>
+                                    <input type="radio" name="performance_tracking" value="sim" id="kpi_yes">
+                                    <label for="kpi_yes">Dashboard completo com KPIs em tempo real</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Contact Info -->
+                        <div class="grader-step">
+                            <h3>📋 Dados para seu Relatório Personalizado</h3>
+                            <p class="text-gray mb-4">Para finalizar, precisamos de algumas informações para enviar seu diagnóstico</p>
+
+                            <div class="form-group">
+                                <label class="form-label">Nome completo *</label>
+                                <input type="text" name="contact_name" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Email *</label>
+                                <input type="email" name="contact_email" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Nome da empresa *</label>
+                                <input type="text" name="company_name" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Cargo/Função</label>
+                                <select name="job_title" class="form-control">
+                                    <option value="">Selecione seu cargo</option>
+                                    <option value="CEO">CEO/Proprietário</option>
+                                    <option value="Diretor">Diretor</option>
+                                    <option value="Gerente">Gerente</option>
+                                    <option value="Coordenador">Coordenador</option>
+                                    <option value="Analista">Analista</option>
+                                    <option value="Consultor">Consultor</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Principal objetivo atual da empresa *</label>
+                                <select name="main_goal" class="form-control" required>
+                                    <option value="">Selecione o objetivo principal</option>
+                                    <option value="Gerar mais leads">Gerar mais leads qualificados</option>
+                                    <option value="Aumentar conversão">Aumentar taxa de conversão</option>
+                                    <option value="Melhorar retenção">Melhorar retenção de clientes</option>
+                                    <option value="Automatizar processos">Automatizar processos de vendas</option>
+                                    <option value="Integrar sistemas">Integrar sistemas e dados</option>
+                                    <option value="Escalar operação">Escalar operação comercial</option>
+                                </select>
+                            </div>
+
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <label for="consent">Concordo em receber o diagnóstico por email e WhatsApp</label>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <div class="grader-buttons">
+                            <button type="button" class="btn btn-outline btn-prev" style="display: none;">Voltar</button>
+                            <button type="button" class="btn btn-primary btn-next">Próximo</button>
+                        </div>
+                    </form>
+
+                    <!-- Result Container -->
+                    <div class="grader-result" style="display: none;">
+                        <div class="score-circle">0%</div>
+                        <h3>Seu Growth Score</h3>
+                        <p class="lead">Baseado nas suas respostas, identificamos as principais oportunidades de crescimento</p>
+                        
+                        <div class="score-breakdown" style="text-align: left; max-width: 400px; margin: 2rem auto;">
+                            <!-- Breakdown will be inserted here by JavaScript -->
+                        </div>
+
+                        <div class="recommendations" style="text-align: left; margin: 2rem 0;">
+                            <!-- Recommendations will be inserted here by JavaScript -->
+                        </div>
+
+                        <div style="margin-top: 3rem;">
+                            <a href="#" class="btn btn-success btn-lg btn-whatsapp">📱 Receber Plano Detalhado no WhatsApp</a>
+                        </div>
+
+                        <div style="margin-top: 2rem;">
+                            <a href="index.html" class="btn btn-outline">Voltar ao Site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 Marketeria. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    
+    <style>
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem 0;
+            background: var(--bg-light);
+            border-radius: var(--border-radius);
+        }
+        
+        .grader-step {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .grader-result {
+            animation: slideUp 0.5s ease-out;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</body>
+</html>
