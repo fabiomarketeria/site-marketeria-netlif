@@ -1,29 +1,174 @@
-// Marketeria - Main JavaScript
+// Marketeria - Main JavaScript with Material Design enhancements
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile Navigation Toggle
+    // Initialize Material Design features
+    initMaterialDesign();
+    
+    // Mobile Navigation Toggle with Material Design
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
     
     if (navToggle && navLinks) {
         navToggle.addEventListener('click', function() {
             navLinks.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('active');
+                navToggle.classList.remove('active');
+            }
         });
     }
     
-    // Smooth Scrolling for Internal Links
+    // Header scroll effect
+    const header = document.querySelector('.header');
+    const nav = document.querySelector('.nav');
+    
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+            nav.classList.add('compact');
+        } else {
+            header.classList.remove('scrolled');
+            nav.classList.remove('compact');
+        }
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    // Smooth Scrolling for Internal Links with offset for fixed header
     const smoothScrollLinks = document.querySelectorAll('a[href^="#"]');
     smoothScrollLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const headerHeight = header.offsetHeight;
+                const targetPosition = target.offsetTop - headerHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
     });
+    
+    // Scroll-triggered animations
+    const scrollObserverOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
+    };
+    
+    const scrollObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, scrollObserverOptions);
+    
+    // Observe elements for animation
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        scrollObserver.observe(el);
+    });
+    
+    // Add scroll animation classes to cards and sections
+    document.querySelectorAll('.card, .testimonial, .step').forEach(el => {
+        el.classList.add('animate-on-scroll');
+        scrollObserver.observe(el);
+    });
+
+    // Material Design Initialization
+    function initMaterialDesign() {
+        // Add ripple effect to buttons
+        document.querySelectorAll('.btn, .card').forEach(element => {
+            element.addEventListener('click', createRipple);
+        });
+        
+        // Enhanced focus management
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentNode.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentNode.classList.remove('focused');
+                if (this.value) {
+                    this.parentNode.classList.add('filled');
+                } else {
+                    this.parentNode.classList.remove('filled');
+                }
+            });
+        });
+        
+        // Add hover effects to interactive elements
+        document.querySelectorAll('.btn, .card, .nav-links a').forEach(element => {
+            element.classList.add('hover-lift');
+        });
+        
+        // Initialize loading states for form submissions
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function() {
+                const submitBtn = form.querySelector('button[type="submit"], input[type="submit"]');
+                if (submitBtn) {
+                    submitBtn.classList.add('loading');
+                    setTimeout(() => {
+                        submitBtn.classList.remove('loading');
+                    }, 2000);
+                }
+            });
+        });
+    }
+    
+    // Create ripple effect
+    function createRipple(event) {
+        const element = event.currentTarget;
+        const circle = document.createElement('span');
+        const diameter = Math.max(element.clientWidth, element.clientHeight);
+        const radius = diameter / 2;
+        
+        circle.style.width = circle.style.height = `${diameter}px`;
+        circle.style.left = `${event.clientX - element.offsetLeft - radius}px`;
+        circle.style.top = `${event.clientY - element.offsetTop - radius}px`;
+        circle.classList.add('ripple-effect');
+        
+        const existingRipple = element.querySelector('.ripple-effect');
+        if (existingRipple) {
+            existingRipple.remove();
+        }
+        
+        element.appendChild(circle);
+        
+        setTimeout(() => {
+            circle.remove();
+        }, 600);
+    }
+    
+    // Add CSS for ripple effect
+    const rippleStyles = `
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = rippleStyles;
+    document.head.appendChild(styleSheet);
     
     // Form Validation
     function validateForm(form) {
