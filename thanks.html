@@ -165,12 +165,14 @@
     <script src="main.js"></script>
     
     <script>
-        // Track thank you page view
-        gtag('event', 'conversion', {
-            'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
-            'value': 1.0,
-            'currency': 'BRL'
-        });
+        // Track thank you page view - replace with your actual Google Analytics code
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+                'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+                'value': 1.0,
+                'currency': 'BRL'
+            });
+        }
         
         // Auto-open WhatsApp after 10 seconds (optional)
         setTimeout(function() {
